@@ -24,12 +24,9 @@ export class TodoListService {
 
     async getTodoItemById(id: string): Promise<TodoList> {
         try {
-            const item = await this.todoItemModel.findOne({ _id:id });
-            if (item !== null) {
-                return item;
-            } else {
-                throw new NotFoundException('Could not find items')
-            }
+            const item = await this.todoItemModel.findOne({ _id: id });
+            if (!item) throw new NotFoundException('Could not find items')
+            return item
         } catch (error) {
             throw new NotFoundException('Could not find items')
         }
