@@ -25,20 +25,3 @@ export class TodoList {
 
 }
 export const TodoListSchema = SchemaFactory.createForClass(TodoList);
-// export const TodoListSchema = new mongoose.Schema({
-//     title: { type: String, required: true },
-//     dueDate: { type: String, required: true },
-//     occurance: { type: String, required: true },
-//     category: { type: String, required: true },
-//     reminder: { type: Boolean, required: true }
-// })
-
-
-// export interface Todo extends mongoose.Document {
-//     id: string;
-//     title: string;
-//     dueDate: string;
-//     occurance: string;
-//     category: string;
-//     reminder: boolean;
-// }

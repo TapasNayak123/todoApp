@@ -15,7 +15,7 @@ export class AuthService {
         const checkUser = await this.userRepo.findOne({ email: requestBody.email });
         const respObj: any = {};
         if (checkUser) {
-            respObj.statusCode = 200
+            respObj.statusCode = 204
             respObj.message = "User already exists for this email !!"
         } else {
             const hashedPwd = await util.generatePasswordHash(requestBody.password);
